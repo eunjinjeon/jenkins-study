@@ -14,6 +14,11 @@ pipeline {
         password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
   
+   environment { 
+        CC = 'clang'
+    }
+
+  
     stages {
       
         stage("build") {
@@ -24,7 +29,7 @@ pipeline {
           
             steps {
                 echo 'building the application...'
-              echo "choice is ${params.CHOICE} , key is ${AN_ACCESS_KEY}"
+              echo "choice is ${params.CHOICE} , CC is ${CC}, key is ${AN_ACCESS_KEY}"
             }
          }
       
