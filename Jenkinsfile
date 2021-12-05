@@ -23,7 +23,7 @@ pipeline {
           
             steps {
                 echo 'testing the application...'
-                './hello'
+                sh './hello'
             }
          }
       
