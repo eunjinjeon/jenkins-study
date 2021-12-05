@@ -15,6 +15,7 @@ pipeline {
           
             steps {
                 echo 'building the application...'
+                sh 'go build hello.go'
             }
          }
       
@@ -22,6 +23,7 @@ pipeline {
           
             steps {
                 echo 'testing the application...'
+                './hello'
             }
          }
       
