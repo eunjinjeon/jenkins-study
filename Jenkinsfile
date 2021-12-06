@@ -11,10 +11,32 @@ pipeline {
             }
         }
 
+        stage("check") {
+
+            when{
+                branch 'example'
+            }
+          
+            steps {
+                echo 'checking the application...'
+            }
+        }
+
         stage("test") {
           
             steps {
                 echo 'testing the application...'
+            }
+        }
+
+        stage("dev") {
+
+            when{
+                branch 'dev'
+            }
+          
+            steps {
+                echo 'developing the application...'
             }
         }
 
