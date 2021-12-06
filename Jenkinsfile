@@ -16,10 +16,27 @@ pipeline{
     }
     
      stage("test"){
+       when{
+         branch 'dev'
+       }
+       
       steps{
           echo 'test application...'
       }
     }
+  }
+  
+  post {
+    always{
+     echo 'always' 
+    }
+    success{
+     echo 'success' 
+    }
+    failure{
+     echo 'failure' 
+    }
+    
   }
   
 }
