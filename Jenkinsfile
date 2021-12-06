@@ -42,7 +42,7 @@ pipeline {
             steps {
                 echo 'developing the application...'
                 echo "build id = ${BUILD_ID}"
-                echo "access key id = ${ACCESS_KEY}"
+                echo "access key id = ${ACCESS_KEY_USR}"
             }
         }
 
