@@ -14,25 +14,18 @@ pipeline {
         stage("build") {
           
             steps {
-                echo 'building the application...'
+                echo 'building hello.go...'
                 sh 'go build hello.go'
             }
          }
       
-         stage("test") {
+         stage("run") {
           
             steps {
-                echo 'testing the application...'
+                echo 'Running hello.go...'
                 sh './hello'
             }
-         }
-      
-         stage("deploy") {
-          
-            steps {
-                echo 'deploying the application...'
-            }
-         }       
+         }    
     }
 }
 
