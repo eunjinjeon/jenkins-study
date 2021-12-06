@@ -31,12 +31,18 @@ pipeline {
 
         stage("dev") {
 
-            when{
+            when {
                 branch 'dev'
+            }
+
+            environment {
+                ACCESS_KEY = credentials('gittest')
             }
           
             steps {
                 echo 'developing the application...'
+                echo "build id = ${BUILD_ID}"
+                echo "access key id = ${ACCESS_KEY}"
             }
         }
 
